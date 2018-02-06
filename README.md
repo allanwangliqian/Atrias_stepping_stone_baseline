@@ -1,11 +1,19 @@
-compiling the codes and run: 
+--> Compiling the codes and run: 
+
 go to "/build"
+
 type "cmake .."
+
 type "make"
-run "./ZED_KICK_START <port1> <port2>"
-<port1> and <port2> by default are 2111 and 2112, 
+
+run "./ZED_KICK_START port1 port2" (e.g. "./ZED_KICK_START 2111 2112")
+
+port1 and port2 by default are 2111 and 2112, 
+
 port1 is for receiving client data (send on the matlab side), 
+
 port2 is for sending data to client (receive on matlab side)
+
 
 Note: You need to run this first before running the matlab simulink 
       because this is the server!
@@ -16,9 +24,11 @@ Note to Avinash: For the matlab simulink, simply replace the constant input
                  horizontally and positive when the camera points down.
                  Also note that the variable is a single scalar value encoded
                  like this: sign(angle) * (height * 10 + abs(angle)). My code
-                 will decode this scalar value into height and angle.
+                 will decode this scalar value into height and angle. 
+                 (Height is in mm and angle is from 0 to pi)
 
 CMakelists.txt - A txt file necessary to make and compile the codes
 /build - needed for compiling, the executable is stored in here
-/vid - generated videos after running the code are stored in here
+/vid - generated videos after running the code are stored in here (Not useful now)
 /src/main.cpp - the main program codes
+ZED_stepping_stone
